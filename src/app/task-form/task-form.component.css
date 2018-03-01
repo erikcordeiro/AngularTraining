@@ -1,0 +1,27 @@
+div.row {
+  margin-bottom: 5px;
+}
+
+label {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+  width: 70px;
+  display: inline-block;
+}
+
+input[type='text'], input[type='number'] {
+	height: 30px;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+button {
+	height: 30px;
+	border: solid 1px gray;
+	background-color: white;
+  color: #333;
+  margin-left: 74px;
+}

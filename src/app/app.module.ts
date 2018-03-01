@@ -9,13 +9,15 @@ import { FormatCurrencyPipe } from './format-currency.pipe';
 
 import localePt from '@angular/common/locales/pt';
 import { MyTaskDirective } from './my-task.directive';
+import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskService } from './task.service';
 
 registerLocaleData(localePt);
 
 @NgModule({
-  declarations: [ AppComponent, TaskListComponent, FormatCurrencyPipe, MyTaskDirective ],
+  declarations: [ AppComponent, TaskListComponent, FormatCurrencyPipe, MyTaskDirective, TaskFormComponent ],
   imports     : [ BrowserModule, FormsModule ],
-  providers   : [ ],
+  providers   : [ TaskService ],
   bootstrap   : [ AppComponent ]
 })
 export class AppModule { }

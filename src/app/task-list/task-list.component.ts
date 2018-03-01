@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
-
-
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -10,37 +9,11 @@ import { Task } from '../task';
 })
 export class TaskListComponent implements OnInit {
 
-  constructor() { }
+  tasks: Array<Task>;
 
-  task: Task  = {
-    id: 0,
-    name: '',
-    value: 0,
-    date_launch: new Date()
-  };
-
-  tasks = [];
-
-  ngOnInit() {
-
+  constructor(private taskService: TaskService) {
+    this.tasks = taskService.tasks;
   }
 
-  add() {
-
-    // cria uma cópia do objeto ths.task para quebrar a referência.
-    const item = Object.assign({}, this.task);
-    item.id = this.tasks.length + 1;
-    item.date_launch = new Date();
-
-    // a cópia é inserida no array.
-    this.tasks.push(item);
-
-    // também poderia ser utilizada uma instância limpa (resetar o objeto)
-    // de Task após o preenchimento do formulário,
-    /*this.task = {
-      name: '',
-      value: 0,
-      ...
-    };*/
-  }
+  ngOnInit() { }
 }

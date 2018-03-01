@@ -1,0 +1,21 @@
+<div class="row">
+	<label for="txtName">Name:</label>
+	<input id="txtName" type="text" [(ngModel)]="task.name" />
+</div>
+
+<div class="row">
+	<label for="txtValue">Value:</label>
+	<input id="txtValue" type="number" [(ngModel)]="task.value" />
+</div>
+
+<div class="row">
+	<button type="button" (click)="add()">Adicionar</button>
+</div>
+
+<ul>
+	<li id="listItem_{{item.id}}" *ngFor="let item of tasks" [appMyTask]="item">
+    <span class="item-date" [innerHTML]="item.date_launch | date:'short':'':'pt'"></span>
+    <span class="item-name">{{ item.name }}</span>
+    <span class="item-value">(<span [ngClass]="{'positive-value': item.value > 0, 'negative-value': item.value < 0 }">{{ item.value | formatCurrency }}</span>)</span>
+  </li>
+</ul>

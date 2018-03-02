@@ -1,9 +1,7 @@
 li, span.item-name {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
   text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 ul {
@@ -13,23 +11,20 @@ ul {
 
 li {
 	list-style: none;
-	width: 265px;
+	width: 323px;
 	margin: 0 0 2px;
 	padding: 4px;
 	border: solid 1px gray;
   background-color: #eee;
 }
 
-span.positive-value {
-  color: green;
-}
+span.positive-value { color: green; }
 
-span.negative-value {
-  color: red;
-}
+span.negative-value { color: red; }
 
 span.item-name {
-  width: 200px;
+  background-color: red;
+  width: 250px;
   display: inline-block;
 }
 

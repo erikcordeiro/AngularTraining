@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -11,7 +12,9 @@ import { TaskListComponent } from './task-list/task-list.component';
 
 import { FormatCurrencyPipe } from './format-currency.pipe';
 import { MyTaskDirective } from './my-task.directive';
+
 import { TaskService } from './task.service';
+import { CepService } from './cep.service';
 
 import localePt from '@angular/common/locales/pt';
 
@@ -27,8 +30,8 @@ registerLocaleData(localePt);
     CepSampleComponent,
     FormatCurrencyPipe
   ],
-  imports     : [ BrowserModule, FormsModule ],
-  providers   : [ TaskService ],
+  imports     : [ BrowserModule, FormsModule, HttpModule ],
+  providers   : [ TaskService, CepService ],
   bootstrap   : [ AppComponent ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { RouterModule, Router } from '@angular/router';
 import { registerLocaleData } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -18,8 +19,15 @@ import { CepService } from './cep.service';
 
 import localePt from '@angular/common/locales/pt';
 import { ValidacaoSampleComponent } from './validacao-sample/validacao-sample.component';
+import { NavComponent } from './nav/nav.component';
 
 registerLocaleData(localePt);
+
+const routers = [
+  { path: 'tasks', component: TaskListSampleComponent },
+  { path: 'cep', component: CepSampleComponent },
+  { path: 'validacao', component: ValidacaoSampleComponent }
+];
 
 @NgModule({
   declarations: [
@@ -30,9 +38,10 @@ registerLocaleData(localePt);
     MyTaskDirective,
     CepSampleComponent,
     FormatCurrencyPipe,
-    ValidacaoSampleComponent
+    ValidacaoSampleComponent,
+    NavComponent
   ],
-  imports     : [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule ],
+  imports     : [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, RouterModule.forRoot(routers) ],
   providers   : [ TaskService, CepService ],
   bootstrap   : [ AppComponent ]
 })

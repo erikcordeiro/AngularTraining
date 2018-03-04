@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { registerLocaleData } from '@angular/common';
 
@@ -17,6 +17,7 @@ import { TaskService } from './task.service';
 import { CepService } from './cep.service';
 
 import localePt from '@angular/common/locales/pt';
+import { ValidacaoSampleComponent } from './validacao-sample/validacao-sample.component';
 
 registerLocaleData(localePt);
 
@@ -28,9 +29,10 @@ registerLocaleData(localePt);
     TaskListComponent,
     MyTaskDirective,
     CepSampleComponent,
-    FormatCurrencyPipe
+    FormatCurrencyPipe,
+    ValidacaoSampleComponent
   ],
-  imports     : [ BrowserModule, FormsModule, HttpModule ],
+  imports     : [ BrowserModule, FormsModule, ReactiveFormsModule, HttpModule ],
   providers   : [ TaskService, CepService ],
   bootstrap   : [ AppComponent ]
 })

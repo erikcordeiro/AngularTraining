@@ -12,8 +12,13 @@ export class TaskListComponent implements OnInit {
   tasks: Array<Task>;
 
   constructor(private taskService: TaskService) {
-    this.tasks = taskService.tasks;
+    this.refresh();
   }
 
   ngOnInit() { }
+
+  refresh() {
+    this.taskService.getTasks()
+                    .then((tasks: Array<Task>) => this.tasks = tasks);
+  }
 }
